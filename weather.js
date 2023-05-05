@@ -143,6 +143,22 @@ const app = {
               "mb-3"
             );
 
-            
+            searchHistoryButton.onclick = function () {
+                let storageObject = {};
+                document.getElementById("city-input").value = "";
+                document.getElementById("state-input").value = "";
+                document.getElementById("country-input").value = "";
+                city = passedCity.city;
+                country = passedCity.country;
+                storageObject.city = city;
+                storageObject.country = country;
+                app.fetchStoredLocation(storageObject);
+              };
+          
+              searchHistoryButton.innerText = searchHistoryButtonInput;
+              searchHistoryArea.appendChild(searchHistoryButton);
+            },    
+
+
               
 }
