@@ -157,7 +157,28 @@ const app = {
           
               searchHistoryButton.innerText = searchHistoryButtonInput;
               searchHistoryArea.appendChild(searchHistoryButton);
-            },    
+            },
+    
+            displayCurrentForecast: (weatherResp) => {
+                const cityInsert = document.getElementById("city");
+                const countryInsert = document.getElementById("country");
+                const weatherIconInsert = document.getElementById("current-weather-icon");
+                const tempInsert = document.getElementById("current-temp");
+                const windInsert = document.getElementById("current-wind");
+                const humidityInsert = document.getElementById("current-humidity");
+                cityInsert.innerText = weatherResp.city + ", ";
+                countryInsert.innerText = weatherResp.country;
+                weatherIconInsert.innerHTML =
+                  "<img src='https://openweathermap.org/img/wn/" +
+                  weatherResp.currentIcon +
+                  ".png'>" +
+                  "(" +
+                  weatherResp.currentIconDes +
+                  ")";
+                tempInsert.innerText = "Temp: " + weatherResp.temp + "°F";
+                windInsert.innerText = "Wind: " + weatherResp.wind + "MPH";
+                humidityInsert.innerText = "Humidity: " + weatherResp.humidity + "%";
+              },        
 
 
               
