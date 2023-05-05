@@ -178,7 +178,29 @@ const app = {
                 tempInsert.innerText = "Temp: " + weatherResp.temp + "°F";
                 windInsert.innerText = "Wind: " + weatherResp.wind + "MPH";
                 humidityInsert.innerText = "Humidity: " + weatherResp.humidity + "%";
-              },        
+              },
+              
+              displayFiveDayForecast: (weatherResp) => {
+                const currentWeatherTitle = document.getElementById(
+                  "currentforecast-title"
+                );
+                const weatherCard1 = document.getElementById("weather-card-1");
+                const weatherCard2 = document.getElementById("weather-card-2");
+                const weatherCard3 = document.getElementById("weather-card-3");
+                const weatherCard4 = document.getElementById("weather-card-4");
+                const weatherCard5 = document.getElementById("weather-card-5");
+                
+                timesArray = [];
+                timesArray.push(
+                  weatherResp[0].dt,
+                  weatherResp[1].dt,
+                  weatherResp[2].dt,
+                  weatherResp[3].dt,
+                  weatherResp[4].dt
+                );
+                convertedTimesArray = timesArray.map((date) =>
+                  new Date(date * 1000).toLocaleDateString("en-US")
+                );
 
 
               
