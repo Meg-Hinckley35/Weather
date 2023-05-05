@@ -119,5 +119,13 @@ const app = {
                 let searchHistory = {};
                 searchHistory.city = data.city.name;
                 searchHistory.country = data.city.country;
+
+                //pass data
+                app.displayCurrentForecast(currentForecast);
+                app.displayFiveDayForecast(fiveDayForecast);
+                app.saveSearch(searchHistory);
+            })
+            .catch(console.err);
+        },
               
 }
