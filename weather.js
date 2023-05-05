@@ -202,6 +202,75 @@ const app = {
                   new Date(date * 1000).toLocaleDateString("en-US")
                 );
 
+    currentWeatherTitle.innerText =
+      "Current Weather on " + convertedTimesArray[0];
+
+    weatherCard1.innerHTML = `<div class="card-header">
+        <div class="card-header-title">
+            ${convertedTimesArray[0]} <img src="https://openweathermap.org/img/wn/${weatherResp[0].weather[0].icon}.png">
+        </div>
+    </div>
+    <div class="card-content">
+        <div class="content">
+            <p class="mb-3"><strong>Temp:</strong> ${weatherResp[0].main.temp} °F</p>
+            <p class="mb-3"><strong>Wind:</strong> ${weatherResp[0].wind.speed}mph</p>
+            <p><strong>Humidity:</strong> ${weatherResp[0].main.humidity}%</p>
+        </div>
+    </div>`;
+
+    weatherCard2.innerHTML = `<div class="card-header">
+        <div class="card-header-title">
+            ${convertedTimesArray[1]} <img src="https://openweathermap.org/img/wn/${weatherResp[1].weather[0].icon}.png">
+        </div>
+    </div>
+    <div class="card-content">
+        <div class="content">
+            <p class="mb-3"><strong>Temp:</strong> ${weatherResp[1].main.temp} °F</p>
+            <p class="mb-3"><strong>Wind:</strong> ${weatherResp[1].wind.speed}mph</p>
+            <p><strong>Humidity:</strong> ${weatherResp[1].main.humidity}%</p>
+        </div>
+    </div>`;
+
+    weatherCard3.innerHTML = `<div class="card-header">
+        <div class="card-header-title">
+            ${convertedTimesArray[2]} <img src="https://openweathermap.org/img/wn/${weatherResp[2].weather[0].icon}.png">
+        </div>
+    </div>
+    <div class="card-content">
+        <div class="content">
+            <p class="mb-3"><strong>Temp:</strong> ${weatherResp[2].main.temp} °F</p>
+            <p class="mb-3"><strong>Wind:</strong> ${weatherResp[2].wind.speed}mph</p>
+            <p><strong>Humidity:</strong> ${weatherResp[2].main.humidity}%</p>
+        </div>
+    </div>`;
+
+    weatherCard4.innerHTML = `<div class="card-header">
+        <div class="card-header-title">
+            ${convertedTimesArray[3]} <img src="https://openweathermap.org/img/wn/${weatherResp[3].weather[0].icon}.png">
+        </div>
+    </div>
+    <div class="card-content">
+        <div class="content">
+            <p class="mb-3"><strong>Temp:</strong> ${weatherResp[3].main.temp} °F</p>
+            <p class="mb-3"><strong>Wind:</strong> ${weatherResp[3].wind.speed}mph</p>
+            <p><strong>Humidity:</strong> ${weatherResp[3].main.humidity}%</p>
+        </div>
+    </div>`;
+
+    weatherCard5.innerHTML = `<div class="card-header">
+        <div class="card-header-title">
+            ${convertedTimesArray[4]} <img src="https://openweathermap.org/img/wn/${weatherResp[4].weather[0].icon}.png">
+        </div>
+    </div>
+    <div class="card-content">
+        <div class="content">
+            <p class="mb-3"><strong>Temp:</strong> ${weatherResp[4].main.temp} °F</p>
+            <p class="mb-3"><strong>Wind:</strong> ${weatherResp[4].wind.speed}mph</p>
+            <p><strong>Humidity:</strong> ${weatherResp[4].main.humidity}%</p>
+        </div>
+    </div>`;
+  },
+};
+
 
               
-}
