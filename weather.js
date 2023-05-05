@@ -57,4 +57,41 @@ const app = {
             }
           },
 
+          //fetching current weather by the location we have just grabbed
+          fetchWeather: (location) => {
+            const currentWeatherBox = document.getElementById("weather-box");
+            const forecastTitle = document.getElementById("forecast-title");
+            const currentForecastTitle = document.getElementById(
+              "currentforecast-title"
+            );
+            const forecastBox = document.getElementById("five-day-forecast");
+            const weatherCard1 = document.getElementById("weather-card-1");
+            const weatherCard2 = document.getElementById("weather-card-2");
+            const weatherCard3 = document.getElementById("weather-card-3");
+            const weatherCard4 = document.getElementById("weather-card-4");
+            const weatherCard5 = document.getElementById("weather-card-5");
+            let lat = location.lat;
+            let lon = location.lon;
+            let key = "a65653b1059d6cc607d60a89f12cd23c";
+            let url = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${key}&units=imperial&lang=en`;
+                
+            // grabbing then returning the data on current forecast
+            fetch(url)
+              .then((resp) => {
+                if (!resp.ok) throw new Error(resp.statusText);
+                return resp.json();
+              })
+              .then((data) => {
+                if (data) {
+                  currentWeatherBox.classList.remove("hide");
+                  forecastTitle.classList.remove("hide");
+                  currentForecastTitle.classList.remove("hide");
+                  forecastBox.classList.remove("hide");
+                  weatherCard1.classList.remove("hide");
+                  weatherCard2.classList.remove("hide");
+                  weatherCard3.classList.remove("hide");
+                  weatherCard4.classList.remove("hide");
+                  weatherCard5.classList.remove("hide");
+                }
+              
 }
