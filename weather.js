@@ -127,7 +127,7 @@ const app = {
             })
             .catch(console.err);
         },
-
+        // function to search a stored location
         saveSearch: (passedCity) => {
             const searchHistoryArea = document.getElementById("searchContainer");
             localStorage.setItem("city", passedCity.city);
@@ -143,6 +143,7 @@ const app = {
               "mb-3"
             );
 
+            //click function to fetch an already stored location    
             searchHistoryButton.onclick = function () {
                 let storageObject = {};
                 document.getElementById("city-input").value = "";
@@ -158,7 +159,8 @@ const app = {
               searchHistoryButton.innerText = searchHistoryButtonInput;
               searchHistoryArea.appendChild(searchHistoryButton);
             },
-    
+
+            //function to pass current forecast data into  current weather card below
             displayCurrentForecast: (weatherResp) => {
                 const cityInsert = document.getElementById("city");
                 const countryInsert = document.getElementById("country");
@@ -179,7 +181,8 @@ const app = {
                 windInsert.innerText = "Wind: " + weatherResp.wind + "MPH";
                 humidityInsert.innerText = "Humidity: " + weatherResp.humidity + "%";
               },
-              
+
+              //function to pass 5day forecast into weather cards below
               displayFiveDayForecast: (weatherResp) => {
                 const currentWeatherTitle = document.getElementById(
                   "currentforecast-title"
@@ -201,10 +204,11 @@ const app = {
                 convertedTimesArray = timesArray.map((date) =>
                   new Date(date * 1000).toLocaleDateString("en-US")
                 );
-
+    //title                
     currentWeatherTitle.innerText =
       "Current Weather on " + convertedTimesArray[0];
-
+    
+    //weather cards to pass the data into  
     weatherCard1.innerHTML = `<div class="card-header">
         <div class="card-header-title">
             ${convertedTimesArray[0]} <img src="https://openweathermap.org/img/wn/${weatherResp[0].weather[0].icon}.png">
@@ -272,5 +276,6 @@ const app = {
   },
 };
 
-
+//initialize app
+app.init();
               
