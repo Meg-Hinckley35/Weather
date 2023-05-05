@@ -127,5 +127,22 @@ const app = {
             })
             .catch(console.err);
         },
+
+        saveSearch: (passedCity) => {
+            const searchHistoryArea = document.getElementById("searchContainer");
+            localStorage.setItem("city", passedCity.city);
+            let searchHistoryButtonInput = localStorage.getItem("city");
+            let searchHistoryButton = document.createElement("button");
+            searchHistoryButton.classList.add(
+              "button",
+              "is-warning",
+              "column",
+              "is-12",
+              "has-text-centered",
+              "p-2",
+              "mb-3"
+            );
+
+            
               
 }
