@@ -93,5 +93,26 @@ const app = {
                   weatherCard4.classList.remove("hide");
                   weatherCard5.classList.remove("hide");
                 }
+
+                // current forecast values
+                let currentForecast = {};
+                currentForecast.city = data.city.name;
+                currentForecast.country = data.city.country;
+                currentForecast.currentIcon = data.list[0].weather[0].icon;
+                currentForecast.currentIconDes = data.list[0].weather[0].description;
+                currentForecast.temp = data.list[0].main.temp;
+                currentForecast.wind = data.list[0].wind.speed;
+                currentForecast.humidity = data.list[0].main.humidity;
+
+                //five-day forecast values
+                let threeHourArray = data.list;
+                let fiveDayForecast = [];
+                fiveDayForecast.push(
+                    threeHourArray[0],
+                    threeHourArray[8],
+                    threeHourArray[16],
+                    threeHourArray[24],
+                    threeHourArray[32]
+                );
               
 }
