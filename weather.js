@@ -114,5 +114,10 @@ const app = {
                     threeHourArray[24],
                     threeHourArray[32]
                 );
+
+                //save to localStorage
+                let searchHistory = {};
+                searchHistory.city = data.city.name;
+                searchHistory.country = data.city.country;
               
 }
